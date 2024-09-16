@@ -55,4 +55,45 @@ file="$1"
 grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' "$file" | sort -u
 ```
 #### Вывод
-![image]
+![image](https://github.com/mglkv/-1.-/blob/main/pract1/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-09-16%20%D0%B2%2004.21.00.png)
+
+## Задача 5: Написать программу для реализации пользовательской команды
+
+### Код
+```
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo "Используйте: $0 имя команды."
+	exit 1
+fi
+
+command_name="$1"
+command_path="./$command_name"
+
+if [ ! -f "$command_path" ]; then
+	echo "Ошибка: файл '$command_path' не найден."
+	exit 1
+fi
+
+sudo chmod +x "$command_name"
+sudo cp "$command_path" /usr/local/bin/
+
+if [ $? -ne 0 ]; then
+	echo "Ошибка: не удалось скопировать файл."
+	exit 1
+fi
+
+sudo chmod 775 /usr/local/bin/"$command_name"
+
+if [ $? -ne 0 ]; then
+	echo "Ошибка: не удалось установить права для '$command_name'."
+	exit 1
+fi
+
+echo "Команда '$command_name' успешно зарегестрирована."
+```
+#### Вывод
+![image]()
+
+
