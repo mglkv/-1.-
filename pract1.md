@@ -94,6 +94,53 @@ fi
 echo "Команда '$command_name' успешно зарегестрирована."
 ```
 #### Вывод
+![image](https://github.com/mglkv/-1.-/blob/main/pract1/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-09-16%20%D0%B2%2004.58.43.png)
+
+## Задача 6: Написать программу для проверки наличия комментария в первой строке файлов с расширением c,js и py
+
+### Код
+```
+# -*- coding: utf-8 -*-
+import os
+import sys
+
+def check_comment_in_first_line(file_path):
+    with open(file_path, 'r') as file:
+        first_line = file.readline().strip()
+        if first_line.startswith('#') or first_line.startswith('//') or first_line.startswith('/*'):
+            return True
+    return False
+
+def check_files_in_directory(directory):
+    extensions = ('.c', '.js', '.py')
+    for filename in os.listdir(directory):
+        if filename.endswith(extensions):
+            file_path = os.path.join(directory, filename)
+            if check_comment_in_first_line(file_path):
+                print(f"Комментарий найден в файле: {filename}")
+            else:
+                print(f"Комментарий не найден в файле: {filename}")
+
+if name == 'main':
+    if len(sys.argv) != 2:
+        print("Использование: python3 main.py ~/Desktop/питон")
+        sys.exit(1)
+
+    directory = sys.argv[1]
+    if not os.path.isdir(directory):
+        print(f"{directory} не является директорией.")
+        sys.exit(1)
+
+    check_files_in_directory(directory)
+```
+#### Вывод
 ![image]()
 
+## Задача 7: Написать программу для нахождения файлов-дубликатов 
 
+### Код
+```
+
+```
+#### Вывод
+![image]()
