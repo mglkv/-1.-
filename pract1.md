@@ -210,7 +210,7 @@ if __name__ == "__main__":
         archive(directory, extension)
 ```
 #### Вывод
-![image](https://github.com/mglkv/-1.-/blob/main/pract1/image.png)
+![image](https://github.com/mglkv/-1.-/blob/main/pract1/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-09-16%20%D0%B2%2007.35.59.png)
 
 ## Задача 9: Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файл задаются аргументами
 
